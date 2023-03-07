@@ -11,11 +11,14 @@ const throttledHandleTimeupdate = throttle(handleTimeupdate, 1000);
 player.on('timeupdate', throttledHandleTimeupdate);
 
 function handleTimeupdate(currentTime) {
-    console.log(currentTime.seconds);
-    localStorage.setItem("videoplayer-current-time", JSON.stringify(currentTime.seconds));
-
-    const savedTime = localStorage.getItem("videoplayer-current-time");
-    const parsedTime = JSON.parse(savedTime);
-    console.log(parsedTime);
+  console.log(currentTime.seconds);
+  localStorage.setItem(
+    'videoplayer-current-time',
+    JSON.stringify(currentTime.seconds)
+  );
 }
 
+const savedTime = localStorage.getItem('videoplayer-current-time');
+const parsedTime = JSON.parse(savedTime);
+
+player.setCurrentTime(parsedTime);

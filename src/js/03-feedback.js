@@ -16,8 +16,6 @@ formEl.addEventListener('input', throttledHandleFormElInput);
 
 formEl.addEventListener('submit', handleFormElSubmit);
 
-
-
 function handleFormElInput(event) {
   const userFeedback = {
     email: email.value,
@@ -46,6 +44,6 @@ function handleFormElSubmit(event) {
 function UpdatePage() {
   const savedSettings = localStorage.getItem(LOCALSTORAGE_KEY);
   const parsedSettings = JSON.parse(savedSettings);
-  email.value = parsedSettings || "";
-  message.value = parsedSettings || "";
+  email.value = parsedSettings.email || '';
+  message.value = parsedSettings.message || '';
 }

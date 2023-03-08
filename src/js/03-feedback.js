@@ -42,11 +42,11 @@ function handleFormElSubmit(event) {
 }
 
 function UpdatePage() {
-    const savedSettings = localStorage.getItem(LOCALSTORAGE_KEY);
-    const parsedSettings = JSON.parse(savedSettings);
-    console.log(parsedSettings);
-    if (parsedSettings !== null) {
-        email.value = parsedSettings.email;
-       message.value = parsedSettings.message;
-    }
+  const savedSettings = localStorage.getItem(LOCALSTORAGE_KEY);
+  const parsedSettings = JSON.parse(savedSettings);
+
+  if (parsedSettings !== null) {
+    email.value = parsedSettings.email;
+    message.value = parsedSettings.message;
+  }
 }

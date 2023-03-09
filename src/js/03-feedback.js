@@ -36,7 +36,7 @@ function handleFormElSubmit(event) {
   const parsedSettings = JSON.parse(savedSettings);
   console.log(parsedSettings);
 
-  localStorage.clear();
+  localStorage.removeItem(LOCALSTORAGE_KEY);
 
   event.currentTarget.reset();
 }
